@@ -8,16 +8,18 @@
     tools:context=".DashBoardActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNagivation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        app:menu="@menu/nav_items"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_items" />
 
     <FrameLayout
+        android:id="@+id/display"
         android:layout_width="409dp"
         android:layout_height="646dp"
         tools:layout_editor_absoluteX="1dp"
