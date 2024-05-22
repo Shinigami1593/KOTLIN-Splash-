@@ -14,7 +14,12 @@ class DestinationActivity : AppCompatActivity() {
         enableEdgeToEdge()
         Binding = ActivityDestinationBinding.inflate(layoutInflater)
         setContentView(Binding.root)
-        
+
+        var name : String = intent.getStringExtra("name").toString()
+        var phone : String = intent.getStringExtra("phone").toString()
+
+        Binding.textView.text = name
+        Binding.textView2.text = phone
 
 
 
