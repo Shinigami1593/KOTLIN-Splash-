@@ -38,8 +38,13 @@ class SourceActivity : AppCompatActivity() {
             bundle.putInt("first",a)
             bundle.putInt("second",b)
 
-            var fragmentManager : FragmentManager = supportFragmentManager
-            var fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+            var destinationFragment = DestinationFragment()
+
+            destinationFragment.arguments = bundle
+
+//            var fragmentManager : FragmentManager = supportFragmentManager
+//            var fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+            supportFragmentManager.beginTransaction().replace(R.id.frameLayoutDataPass,destinationFragment).commit()
 
         }
 
