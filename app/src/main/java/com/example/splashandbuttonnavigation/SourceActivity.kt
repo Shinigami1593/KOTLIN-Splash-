@@ -6,6 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.splashandbuttonnavigation.databinding.ActivitySourceBinding
 
 class SourceActivity : AppCompatActivity() {
@@ -17,16 +19,28 @@ class SourceActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener{
-            var intent = Intent(this@SourceActivity,
-                DestinationActivity::class.java)
+            //activity to activity
+//            var intent = Intent(this@SourceActivity,
+//                DestinationActivity::class.java)
+//
+//            var name: String = binding.newName.text.toString()
+//            var phone: String = binding.newNumber.text.toString()
+//
+//            intent.putExtra("name", name)
+//            intent.putExtra("phone", phone)
+//            startActivity(intent)
+//            finish()
+            //ACTIVITY TO FRAGMENT//
+            var a = binding.num1.text.toString().toInt()
+            var b = binding.num2.text.toString().toInt()
 
-            var name: String = binding.newName.text.toString()
-            var phone: String = binding.newNumber.text.toString()
+            var bundle = Bundle()
+            bundle.putInt("first",a)
+            bundle.putInt("second",b)
 
-            intent.putExtra("name", name)
-            intent.putExtra("phone", phone)
-            startActivity(intent)
-            finish()
+            var fragmentManager : FragmentManager = supportFragmentManager
+            var fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+
         }
 
 
